@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Gratis - QR Code Generator Canggih & Keren</title>
+    <meta name="description" content="Generate QR Code kustom dengan logo, warna, dan desain profesional secara gratis. Cepat, aman, dan tanpa iklan.">
+    <meta name="keywords" content="qr code generator, pembuat qr code, qr kustom, qr logo, tools digital">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="QR Gratis - QR Code Generator Canggih">
+    <meta property="og:description" content="Buat QR Code kustom dengan desain profesional dalam hitungan detik.">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:title" content="QR Gratis">
+    <meta name="twitter:description" content="Pembuat QR Code kustom tercanggih dengan fitur lengkap.">
+
+    <!-- Libraries -->
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary: #000000;
+            --primary-dark: #000000;
+            --secondary: #ec4899;
+            --accent: #f59e0b;
+            --background: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+    }
+
+    @layer base {
+        body {
+            @apply bg-[var(--background)] text-[var(--text-main)] antialiased font-sans;
+        }
+    }
+
+    @layer components {
+        .glass-card {
+            @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl;
+        }
+        .btn-primary {
+            @apply bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-indigo-200 flex items-center justify-center gap-2;
+        }
+        .input-field {
+            @apply w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[var(--primary)] focus:ring-2 focus:ring-indigo-200 transition-all outline-none bg-gray-50/50;
+        }
+        .tab-btn {
+            @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200;
+        }
+        .tab-btn-active {
+            @apply bg-indigo-100 text-[var(--primary)];
+        }
+        .tab-btn-inactive {
+            @apply text-gray-500 hover:bg-gray-100;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- Load Components -->
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/QRCodeDisplay.js"></script>
+    <script type="text/babel" src="components/GeneratorForm.js"></script>
+    <script type="text/babel" src="components/HistoryList.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
